@@ -54,7 +54,10 @@ public class mainClassForArrays {
 // Можливо, щоб отримати унікальні значення, треба насправді просто видалити зайві, методом видалення або remove.
 // Просто мені це чомусь не вдалось.
 
+        ArrayList <String> arrayUniqueLang = (ArrayList <String>)ArrayListLanguages.clone();
 
+        ArrayListLanguages.delete (4);
+        ArrayListLanguages.delete (5);
 
         // Here we create new collection
       //  ArrayListLanguages <String> arrayUniqueLanguages = new ArrayListLanguages<>();
@@ -62,7 +65,7 @@ public class mainClassForArrays {
 
 
 
-     //   ArrayList <String> arrayUniqueLang = (ArrayList <String>)ArrayListLanguages.clone();
+        //   ArrayList <String> arrayUniqueLang = (ArrayList <String>)ArrayListLanguages.clone();
 
         //Here we deleted 2  non-unique values:
     //    arrayUniqueLang.delete (4);

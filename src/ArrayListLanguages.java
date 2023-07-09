@@ -1,12 +1,8 @@
-import org.w3c.dom.Node;
-import java.util.ArrayList;
-import java.util.List;
-
 public class ArrayListLanguages <Element>{
     //This is a class for task 2.
-    private NewArrayList.Node<Element> first;
+    private static NewArrayList.Node<Element> first;
 
-    private NewArrayList.Node<Element> last;
+    private static NewArrayList.Node<Element> last;
 
     public static int size;
 
@@ -38,7 +34,35 @@ public class ArrayListLanguages <Element>{
         size++;
     }
 
-    public void clone (Element element){
+    public NewArrayList.Node<Element> getNodeByIndex (int index){
+        //I've leaved a simple "get" method and created this one
+        NewArrayList.Node<Element> node = first;
+        for (int i = 0; i < index; i++){
+            node = node.next;
+        }
+        return node;
+    }
+
+    public static void delete(int index) {
+        NewArrayList.Node<Element> currentNode = getNodeByIndex(index);
+        if (index == 0) {
+            first = currentNode.next;
+        }else if(index == size-1) {
+            last = currentNode.prev;
+        } else {
+            NewArrayList.Node<Element> nodeBefore = currentNode.prev;
+            NewArrayList.Node<Element> nodeAfter = currentNode.next;
+            nodeBefore.next = nodeAfter;
+            nodeAfter.prev = nodeBefore;
+        }
+        size--;
+    }
+
+    public static NewArrayList <Integer> cloneList (NewArrayList <Integer> ArrayList){
+        NewArrayList <Integer> = new NewArrayList <Integer>( NewArrayList.size());
+        NewArrayList<Integer> clone;
+        for (Integer item : ArrayList) clone.add(item.clone());
+        return clone;
 
     }
 

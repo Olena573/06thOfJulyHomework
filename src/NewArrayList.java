@@ -10,7 +10,7 @@ public class NewArrayList <Element> {
 
     private int size = 0;
 
-    public int size (){
+    public static int size(){
 
         return size;
     }
